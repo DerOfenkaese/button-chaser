@@ -1,8 +1,8 @@
 body{
     text-align:center;
-    background-color: lightgreen;
+    background-color: green;
     animation-name: background;
-    animation-duration: 3s;
+    animation-duration: 10s;
     animation-iteration-count: infinite;
 }
 div {
@@ -27,9 +27,8 @@ button {
     100%{background-color: blue; border-color: pink}
 }
 
-/* no work dunno why plz fix */
-/* @keyframes background {
-    0%{backround-color: green;}
-    50%{backround-color: yellow;}
-    100%{backround-color: green;}
-} */
+@keyframes background {
+    0%{background-color: green;}
+    50%{background-color: yellowgreen;}
+    100%{background-color: green;}
+}
