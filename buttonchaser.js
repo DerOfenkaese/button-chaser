@@ -6,10 +6,10 @@ function buttonRunVertical(operator) {
     let ogPos = document.getElementById("button").style.top
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="add") {
-        document.getElementById("button").style.top = Pos+30+"px";
+        document.getElementById("button").style.top = Pos+15+"px";
     }
     else {
-        document.getElementById("button").style.top = Pos-30+"px";
+        document.getElementById("button").style.top = Pos-15+"px";
     }
 }
 
@@ -17,10 +17,10 @@ function buttonRunHorizontal(operator) {
     let ogPos = document.getElementById("button").style.left
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="add") {
-        document.getElementById("button").style.left = Pos+30+"px";
+        document.getElementById("button").style.left = Pos+15+"px";
     }
     else {
-        document.getElementById("button").style.left = Pos-30+"px";
+        document.getElementById("button").style.left = Pos-15+"px";
     }
 }
 
