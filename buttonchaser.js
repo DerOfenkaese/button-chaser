@@ -1,5 +1,7 @@
 function win() {
-    document.getElementById("whitespace").innerHTML = "&#128523";
+    let whitespace = document.getElementById("whitespace");
+    whitespace.innerHTML = "&#128523";
+    whitespace.style = "animation-name: yummy;"
 }
 
 function buttonRunVertical(operator) {
@@ -25,11 +27,11 @@ function buttonRunHorizontal(operator) {
 }
 
 function mousePosRelToButtonPos() {
-    let horOgPos = document.getElementById("button").style.left
-    let horPos = Number(horOgPos.replace("px", "")) + 73
+    let horOgPos = document.getElementById("button").style.left;
+    let horPos = Number(horOgPos.replace("px", "")) + 73;
 
-    let vertOgPos = document.getElementById("button").style.top
-    let vertPos = Number(vertOgPos.replace("px", "")) + 21.5
+    let vertOgPos = document.getElementById("button").style.top;
+    let vertPos = Number(vertOgPos.replace("px", "")) + 21.5;
 
     window.addEventListener("mousemove", (event) => {
         mousePos = { x: event.clientX, y: event.clientY };
@@ -37,8 +39,8 @@ function mousePosRelToButtonPos() {
     /*console.log(mousePos.x + "|" + mousePos.y)  
     /*very laggy after a few seconds lol*/
 
-    let horDifference = 0
-    let vertDifference = 0
+    let horDifference = 0;
+    let vertDifference = 0;
     
     if (mousePos.y > vertPos) {
         vertDifference = mousePos.y - vertPos;

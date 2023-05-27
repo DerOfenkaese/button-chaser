@@ -9,6 +9,8 @@ body{
 whitespace {
     font-size: 200px;
     text-align:center;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
 }
 
 button {
@@ -32,4 +34,9 @@ button {
     0%{background-color: green;}
     50%{background-color: yellowgreen;}
     100%{background-color: green;}
+}
+
+@keyframes yummy {
+    0%{font-size:1px}
+    100%{font-size:200px}
 }
