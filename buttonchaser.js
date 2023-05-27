@@ -1,5 +1,5 @@
 function win() {
-    document.getElementById("whitespace").innerHTML = "&#9760";
+    document.getElementById("whitespace").innerHTML = "&#128523";
 }
 
 function buttonRunVertical(operator) {
