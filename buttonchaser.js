@@ -16,7 +16,7 @@ function buttonRunHorizontal() {
 
 function mousePosRelToButtonPos() {
     let horOgPos = document.getElementById("button").style.left
-    let horPos = Number(horOgPos.replace("px", ""))
+    let horPos = Number(horOgPos.replace("px", "")) + 120
 
     let vertOgPos = document.getElementById("button").style.top
     let vertPos = Number(vertOgPos.replace("px", ""))
@@ -30,7 +30,7 @@ function mousePosRelToButtonPos() {
     let horDifference = 0
     let vertDifference = 0
     
-    if (mousePos.y > vertPos){
+    if (mousePos.y > vertPos) {
         vertDifference = mousePos.y - vertPos;
     }
     else {
@@ -44,10 +44,10 @@ function mousePosRelToButtonPos() {
         horDifference = horPos - mousePos.x;
     }
 
-    if (vertDifference < 15) {
-        buttonRunVertical();
-    }
-    if (horDifference < 15) {
-        buttonRunHorizontal();
-    }
-}
+    // if (vertDifference < 50 && horDifference < 100) {
+    //     buttonRunVertical();
+    // }
+    // if (horDifference < 50 && vertDifference < 100) {
+    //     buttonRunHorizontal();
+    // }
+} 
