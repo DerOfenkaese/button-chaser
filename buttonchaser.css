@@ -5,8 +5,10 @@ body{
     animation-duration: 10s;
     animation-iteration-count: infinite;
 }
-div {
+
+whitespace {
     font-size: 200px;
+    text-align:center;
 }
 
 button {
