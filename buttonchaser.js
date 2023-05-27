@@ -3,24 +3,51 @@ function win() {
 }
 
 function buttonRunVertical() {
-    let ogpos = document.getElementById("button").style.top
-    let pos = Number(ogpos.replace("px", ""))
-    console.log(pos)
-    document.getElementById("button").style.top = pos-50+"px";
+    let ogPos = document.getElementById("button").style.top
+    let Pos = Number(ogPos.replace("px", ""))
+    document.getElementById("button").style.top = Pos-50+"px";
 }
 
 function buttonRunHorizontal() {
-    let ogpos = document.getElementById("button").style.left
-    let pos = Number(ogpos.replace("px", ""))
-    console.log(pos)
-    document.getElementById("button").style.left = pos-50+"px";
+    let ogPos = document.getElementById("button").style.left
+    let Pos = Number(ogPos.replace("px", ""))
+    document.getElementById("button").style.left = Pos-50+"px";
 }
 
 function mousePosRelToButtonPos() {
+    let horOgPos = document.getElementById("button").style.left
+    let horPos = Number(horOgPos.replace("px", ""))
+
+    let vertOgPos = document.getElementById("button").style.top
+    let vertPos = Number(vertOgPos.replace("px", ""))
+
     window.addEventListener("mousemove", (event) => {
         mousePos = { x: event.clientX, y: event.clientY };
     })
-    /*console.log(mousePos.x + "|" + mousePos.y)  very laggy if uncommented and mouse moves fast lol*/
+    /*console.log(mousePos.x + "|" + mousePos.y)  
+    /*very laggy after a few seconds lol*/
 
+    let horDifference = 0
+    let vertDifference = 0
     
+    if (mousePos.y > vertPos){
+        vertDifference = mousePos.y - vertPos;
+    }
+    else {
+        vertDifference = vertPos - mousePos.y;
+    }
+
+    if (mousePos.x > horPos) {
+        horDifference = mousePos.x - horPos;
+    }
+    else {
+        horDifference = horPos - mousePos.x;
+    }
+
+    if (vertDifference < 15) {
+        buttonRunVertical();
+    }
+    if (horDifference < 15) {
+        buttonRunHorizontal();
+    }
 }
