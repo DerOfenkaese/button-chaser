@@ -55,17 +55,17 @@ function mousePosRelToButtonPos() {
     }
     //actual movement
 
-    if (mousePos.y > vertPos && vertDifference < 30 && horDifference < 70) {
+    if (mousePos.y > vertPos && vertDifference < 30 && horDifference < 75) {
         buttonRunVertical("subtract");
     }
-    if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 70) {
+    if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 75) {
         buttonRunVertical("add");
     }
 
-    if (mousePos.x > horPos && horDifference < 85 && vertDifference < 50) {
+    if (mousePos.x > horPos && horDifference < 85 && vertDifference < 25) {
         buttonRunHorizontal("subtract");
     }
-    if (mousePos.x < horPos && horDifference < 85 && vertDifference < 50) {
+    if (mousePos.x < horPos && horDifference < 85 && vertDifference < 25) {
         buttonRunHorizontal("add");
     }
 } 
