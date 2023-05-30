@@ -4,40 +4,52 @@ function win() {
     whitespace.style = "animation-name: yummy;"
 }
 
-function buttonRunVertical(operator) {
-    let ogPos = document.getElementById("button").style.top
+function buttonRunVertical(operator, increment) {
+    let ogPos = document.getElementById("box").style.top
     let Pos = Number(ogPos.replace("px", ""))
-    if (operator=="add") {
-        document.getElementById("button").style.top = Pos+15+"px";
+    if (operator=="down") {
+        document.getElementById("box").style.top = Pos+increment+"px";
     }
     else {
-        document.getElementById("button").style.top = Pos-15+"px";
+        document.getElementById("box").style.top = Pos-increment+"px";
     }
 }
 
-function buttonRunHorizontal(operator) {
-    let ogPos = document.getElementById("button").style.left
+function buttonRunHorizontal(operator, increment) {
+    let ogPos = document.getElementById("box").style.left
     let Pos = Number(ogPos.replace("px", ""))
-    if (operator=="add") {
-        document.getElementById("button").style.left = Pos+15+"px";
+    if (operator=="right") {
+        document.getElementById("box").style.left = Pos+increment+"px";
     }
     else {
-        document.getElementById("button").style.left = Pos-15+"px";
+        document.getElementById("box").style.left = Pos-increment+"px";
+    }
+}
+// need to finish diagonal
+function buttonRunDiagonal(operator, increment) {
+    let horPos = Number(document.getElementById("box").style.left.replace("px", ""))
+    let vertPos = Number(document.getElementById("box").style.top.replace("px", ""))
+    if (operator == "downright") {
+        document.getElementById("box").style.left = horPos+increment+"px";
+        document.getElementById("box").style.top = vertPos+increment+"px";
+    }
+    else if (operator == "upleft"){
+        document.getElementById("box").style.left = horPos-increment+"px";
+        document.getElementById("box").style.top = vertPos-increment+"px";
     }
 }
 
 function mousePosRelToButtonPos() {
-    let horOgPos = document.getElementById("button").style.left;
-    let horPos = Number(horOgPos.replace("px", "")) + 73;
+    let horOgPos = document.getElementById("box").style.left;
+    let horPos = Number(horOgPos.replace("px", "")) + 146;
 
-    let vertOgPos = document.getElementById("button").style.top;
-    let vertPos = Number(vertOgPos.replace("px", "")) + 21.5;
+    let vertOgPos = document.getElementById("box").style.top;
+    let vertPos = Number(vertOgPos.replace("px", "")) + 43;
 
     window.addEventListener("mousemove", (event) => {
         mousePos = { x: event.clientX, y: event.clientY };
     })
-    /*console.log(mousePos.x + "|" + mousePos.y)  
-    /*very laggy after a few seconds lol*/
+    // console.log(mousePos.x + "|" + mousePos.y)  
 
     let horDifference = 0;
     let vertDifference = 0;
@@ -58,16 +70,16 @@ function mousePosRelToButtonPos() {
     //actual movement
 
     if (mousePos.y > vertPos && vertDifference < 30 && horDifference < 75) {
-        buttonRunVertical("subtract");
+        buttonRunVertical("up", 25);
     }
-    if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 75) {
-        buttonRunVertical("add");
+    else if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 75) {
+        buttonRunVertical("down", 25);
     }
 
-    if (mousePos.x > horPos && horDifference < 85 && vertDifference < 25) {
-        buttonRunHorizontal("subtract");
+    if (mousePos.x > horPos && horDifference < 90 && vertDifference < 25) {
+        buttonRunHorizontal("left", 25);
     }
-    if (mousePos.x < horPos && horDifference < 85 && vertDifference < 25) {
-        buttonRunHorizontal("add");
+    else if (mousePos.x < horPos && horDifference < 90 && vertDifference < 25) {
+        buttonRunHorizontal("right", 25);
     }
 } 
