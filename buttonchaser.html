@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html onmousemove="mousePosRelToButtonPos()">
+<html>
 <head>
     <link rel="stylesheet" href="buttonchaser.css">
 </head>
 <body>
     <whitespace id="whitespace"></whitespace>
-    <box id="box" style="position:fixed; top: 280px; left: 647px;">
+    <box id="box" style="position:fixed; top: 280px; left: 647px;" 
+    onmousemove="mousePosRelToButtonPos()">
     <button id="button" onclick="win()">consume</button>
     </box>
 </body>

@@ -15,12 +15,12 @@ whitespace {
 
 box {
     width: 294px;
-    height: 86px;
+    height: 174px;
 }
 
 button {
     position:absolute;
-    top: 25%;
+    top: 33%;
     left: 25%;
     color:red;
     font-size: xx-large;

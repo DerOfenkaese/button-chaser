@@ -44,42 +44,26 @@ function mousePosRelToButtonPos() {
     let horPos = Number(horOgPos.replace("px", "")) + 146;
 
     let vertOgPos = document.getElementById("box").style.top;
-    let vertPos = Number(vertOgPos.replace("px", "")) + 43;
+    let vertPos = Number(vertOgPos.replace("px", "")) + 86;
 
     window.addEventListener("mousemove", (event) => {
         mousePos = { x: event.clientX, y: event.clientY };
     })
     // console.log(mousePos.x + "|" + mousePos.y)  
 
-    let horDifference = 0;
-    let vertDifference = 0;
-    
-    if (mousePos.y > vertPos) {
-        vertDifference = mousePos.y - vertPos;
-    }
-    else {
-        vertDifference = vertPos - mousePos.y;
-    }
-
-    if (mousePos.x > horPos) {
-        horDifference = mousePos.x - horPos;
-    }
-    else {
-        horDifference = horPos - mousePos.x;
-    }
     //actual movement
 
-    if (mousePos.y > vertPos && vertDifference < 30 && horDifference < 75) {
+    if (mousePos.y > vertPos) {
         buttonRunVertical("up", 25);
     }
-    else if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 75) {
+    else if (mousePos.y < vertPos) {
         buttonRunVertical("down", 25);
     }
 
-    if (mousePos.x > horPos && horDifference < 90 && vertDifference < 25) {
+    if (mousePos.x > horPos) {
         buttonRunHorizontal("left", 25);
     }
-    else if (mousePos.x < horPos && horDifference < 90 && vertDifference < 25) {
+    else if (mousePos.x < horPos) {
         buttonRunHorizontal("right", 25);
     }
 } 
