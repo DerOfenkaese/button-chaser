@@ -17,6 +17,7 @@ function buttonRunVertical(operator, increment) {
 
 function buttonRunHorizontal(operator, increment) {
     let ogPos = document.getElementById("box").style.left
+    console.log(ogPos)
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="right") {
         document.getElementById("box").style.left = Pos+increment+"px";
@@ -25,61 +26,44 @@ function buttonRunHorizontal(operator, increment) {
         document.getElementById("box").style.left = Pos-increment+"px";
     }
 }
-// need to finish diagonal
-function buttonRunDiagonal(operator, increment) {
-    let horPos = Number(document.getElementById("box").style.left.replace("px", ""))
-    let vertPos = Number(document.getElementById("box").style.top.replace("px", ""))
-    if (operator == "downright") {
-        document.getElementById("box").style.left = horPos+increment+"px";
-        document.getElementById("box").style.top = vertPos+increment+"px";
-    }
-    else if (operator == "upleft"){
-        document.getElementById("box").style.left = horPos-increment+"px";
-        document.getElementById("box").style.top = vertPos-increment+"px";
-    }
-}
 
-function mousePosRelToButtonPos() {
-    let horOgPos = document.getElementById("box").style.left;
-    let horPos = Number(horOgPos.replace("px", "")) + 146;
+var previousid;
+function buttonRun(id) {
+    console.log(id)
+    increment = 30
 
-    let vertOgPos = document.getElementById("box").style.top;
-    let vertPos = Number(vertOgPos.replace("px", "")) + 43;
-
-    window.addEventListener("mousemove", (event) => {
-        mousePos = { x: event.clientX, y: event.clientY };
-    })
-    // console.log(mousePos.x + "|" + mousePos.y)  
-
-    let horDifference = 0;
-    let vertDifference = 0;
-    
-    if (mousePos.y > vertPos) {
-        vertDifference = mousePos.y - vertPos;
-    }
-    else {
-        vertDifference = vertPos - mousePos.y;
+    if (id == "button") {
+        id = previousid
+        increment = 60
     }
 
-    if (mousePos.x > horPos) {
-        horDifference = mousePos.x - horPos;
+    if (id == "top") {
+        buttonRunVertical("down", increment)
     }
-    else {
-        horDifference = horPos - mousePos.x;
+    if (id == "bottom") {
+        buttonRunVertical("up", increment)
     }
-    //actual movement
-
-    if (mousePos.y > vertPos && vertDifference < 30 && horDifference < 75) {
-        buttonRunVertical("up", 25);
+    if (id == "left") {
+        buttonRunHorizontal("right", increment)
     }
-    else if (mousePos.y < vertPos && vertDifference < 30 && horDifference < 75) {
-        buttonRunVertical("down", 25);
+    if (id == "right") {
+        buttonRunHorizontal("left", increment)
     }
-
-    if (mousePos.x > horPos && horDifference < 90 && vertDifference < 25) {
-        buttonRunHorizontal("left", 25);
+    if (id == "topleft") {
+        buttonRunVertical("down", increment)
+        buttonRunHorizontal("right", increment)
     }
-    else if (mousePos.x < horPos && horDifference < 90 && vertDifference < 25) {
-        buttonRunHorizontal("right", 25);
+    if (id == "bottomleft") {
+        buttonRunVertical("up",increment)
+        buttonRunHorizontal("right",increment)
     }
+    if (id == "topright") {
+        buttonRunVertical("down",increment)
+        buttonRunHorizontal("left",increment)
+    }
+    if (id == "bottomright") {
+        buttonRunVertical("up",increment)
+        buttonRunHorizontal("left",increment)
+    }
+    previousid = id
 } 

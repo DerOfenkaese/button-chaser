@@ -4,6 +4,8 @@ body{
     animation-name: background;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    height: 1240;
+    width: 720;
 }
 
 whitespace {
@@ -14,14 +16,85 @@ whitespace {
 }
 
 box {
+    position:absolute; 
+    top: 33%; 
+    left: 40%;
     width: 294px;
-    height: 86px;
+    height: 174px;
+}
+
+top {
+    position: absolute;
+    bottom: 66%;
+    right: 25%;
+    left: 25%;
+    height: 33%;
+}
+
+bottom {
+    position: absolute;
+    top: 66%;
+    right: 25%;
+    left: 25%;
+    height: 33%;
+}
+
+left {
+    position: absolute;
+    left: 0%;
+    top: 33%;
+    bottom: 33%;
+    height: 33%;
+    width: 25%;
+}
+
+topleft {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 33%;
+    width: 25%;
+}
+
+bottomleft {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    height: 33%;
+    width: 25%;
+}
+
+right {
+    position: absolute;
+    right: 0%;
+    top: 33%;
+    bottom: 33%;
+    height: 33%;
+    width: 25%;
+}
+
+topright {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 33%;
+    width: 25%;
+}
+
+bottomright {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    height: 33%;
+    width: 25%;
 }
 
 button {
     position:absolute;
-    top: 25%;
+    top: 33%;
     left: 25%;
+    bottom: 33%;
+    right: 25%;
     color:red;
     font-size: xx-large;
     border-color: blue;
