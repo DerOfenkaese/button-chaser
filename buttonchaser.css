@@ -18,10 +18,42 @@ box {
     height: 174px;
 }
 
+top {
+    position: absolute;
+    bottom: 66%;
+    right: 0%;
+    height: 33%;
+    width: 100%;
+}
+
+bottom {
+    position: absolute;
+    top: 66%;
+    right: 0%;
+    height: 33%;
+    width: 100%;
+}
+
+left {
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    width: 25%;
+}
+
+right {
+    position: absolute;
+    right: 0%;
+    height: 100%;
+    width: 25%;
+}
+
 button {
     position:absolute;
     top: 33%;
     left: 25%;
+    bottom: 33%;
+    right: 25%;
     color:red;
     font-size: xx-large;
     border-color: blue;

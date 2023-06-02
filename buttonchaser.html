@@ -6,7 +6,12 @@
 <body>
     <whitespace id="whitespace"></whitespace>
     <box id="box" style="position:fixed; top: 280px; left: 647px;" 
-    onmousemove="mousePosRelToButtonPos()">
+    onmouseover="buttonRun()">
+    
+    <left mouseOn="false" onmouseover="this.mouseOn = 'true'" onmouseleave="this.mouseOn = 'false'"></left>
+    <right mouseOn="false" onmouseover="this.mouseOn = 'true'" onmouseleave="this.mouseOn = 'false'"></right>
+    <top mouseOn="false" onmouseover="this.mouseOn = 'true'" onmouseleave="this.mouseOn = 'false'"></top>
+    <bottom mouseOn="false" onmouseover="this.mouseOn = 'true'" onmouseleave="this.mouseOn = 'false'"></bottom> 
     <button id="button" onclick="win()">consume</button>
     </box>
 </body>
