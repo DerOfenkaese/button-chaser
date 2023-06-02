@@ -21,30 +21,66 @@ box {
 top {
     position: absolute;
     bottom: 66%;
-    right: 0%;
+    right: 25%;
+    left: 25%;
     height: 33%;
-    width: 100%;
 }
 
 bottom {
     position: absolute;
     top: 66%;
-    right: 0%;
+    right: 25%;
+    left: 25%;
     height: 33%;
-    width: 100%;
 }
 
 left {
     position: absolute;
     left: 0%;
-    height: 100%;
+    top: 33%;
+    bottom: 33%;
+    height: 33%;
+    width: 25%;
+}
+
+topleft {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    height: 33%;
+    width: 25%;
+}
+
+bottomleft {
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    height: 33%;
     width: 25%;
 }
 
 right {
     position: absolute;
     right: 0%;
-    height: 100%;
+    top: 33%;
+    bottom: 33%;
+    height: 33%;
+    width: 25%;
+}
+
+topright {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    height: 33%;
+    width: 25%;
+}
+
+bottomright {
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    height: 33%;
     width: 25%;
 }
 
