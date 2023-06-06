@@ -5,7 +5,8 @@ function win() {
 }
 
 function buttonRunVertical(operator, increment) {
-    let ogPos = document.getElementById("box").style.top
+    let ogPos = window.getComputedStyle(document.querySelector('#box')).top
+    // console.log(ogPos+"y")
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="down") {
         document.getElementById("box").style.top = Pos+increment+"px";
@@ -16,8 +17,8 @@ function buttonRunVertical(operator, increment) {
 }
 
 function buttonRunHorizontal(operator, increment) {
-    let ogPos = document.getElementById("box").style.left
-    console.log(ogPos)
+    let ogPos = window.getComputedStyle(document.querySelector('#box')).left
+    // console.log(ogPos +"x")
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="right") {
         document.getElementById("box").style.left = Pos+increment+"px";
@@ -29,7 +30,7 @@ function buttonRunHorizontal(operator, increment) {
 
 var previousid;
 function buttonRun(id) {
-    console.log(id)
+
     increment = 30
 
     if (id == "button") {
