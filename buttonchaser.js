@@ -1,7 +1,19 @@
 function win() {
-    let whitespace = document.getElementById("whitespace");
-    whitespace.innerHTML = "&#128523";
-    whitespace.style = "animation-name: yummy;"
+    let whitespace = document.getElementById("whitespace")
+    whitespace.innerHTML = "&#128523"
+    whitespace.style = "animation-name: yummy"
+}
+
+//little brother named this function certified
+function pawPatrol() {
+    let box = document.getElementById("box").style
+    let boxTopNum = Number(box.top.replace("px", ""))
+    let boxLeftNum = Number(box.left.replace("px", ""))
+
+    if (boxTopNum > window.outerHeight - 180 || boxTopNum < -70 || boxLeftNum > window.outerWidth -180 || boxLeftNum < -90) {
+        box.top = window.outerHeight / 2 + "px"
+        box.left = window.outerHeight / 2 + "px"
+    }
 }
 
 function buttonRunVertical(operator, increment) {
@@ -9,10 +21,10 @@ function buttonRunVertical(operator, increment) {
     // console.log(ogPos+"y")
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="down") {
-        document.getElementById("box").style.top = Pos+increment+"px";
+        document.getElementById("box").style.top = Pos+increment+"px"
     }
     else {
-        document.getElementById("box").style.top = Pos-increment+"px";
+        document.getElementById("box").style.top = Pos-increment+"px"
     }
 }
 
@@ -21,10 +33,10 @@ function buttonRunHorizontal(operator, increment) {
     // console.log(ogPos +"x")
     let Pos = Number(ogPos.replace("px", ""))
     if (operator=="right") {
-        document.getElementById("box").style.left = Pos+increment+"px";
+        document.getElementById("box").style.left = Pos+increment+"px"
     }
     else {
-        document.getElementById("box").style.left = Pos-increment+"px";
+        document.getElementById("box").style.left = Pos-increment+"px"
     }
 }
 
@@ -66,5 +78,8 @@ function buttonRun(id) {
         buttonRunVertical("up",increment)
         buttonRunHorizontal("left",increment)
     }
-    previousid = id
+    previousid = id;
+
+    pawPatrol();
+
 } 
